@@ -1,8 +1,6 @@
-function reversedChars(firstChar, secondChar, thirdChar){
+function reversedChars(firstChar, secondChar, thirdChar) {
     console.log(`${thirdChar} ${secondChar} ${firstChar}`);
 }
-reversedChars('A',
-'B',
-'C');
+reversedChars('A', 'B', 'C');
 
-let array = [thirdChar, secondChar, firstChar].join(' ');
+//let array = [thirdChar, secondChar, firstChar].join(' ');
