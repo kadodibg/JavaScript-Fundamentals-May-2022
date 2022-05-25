@@ -1,12 +1,11 @@
-function printAndSum(startNum, endNum){
+function printAndSum(startNum, endNum) {
     let sum = 0;
     let squence = '';
-
-    for ( let i = startNum; i <= endNum; i++ ){
+    for (let i = startNum; i <= endNum; i++) {
         sum += i;
         squence += i + " ";
     }
-   console.log(squence);
-   console.log(`Sum: ${sum}`);
+    console.log(squence);
+    console.log(`Sum: ${sum}`);
 }
-printAndSum(5,10);
+printAndSum(5, 10);

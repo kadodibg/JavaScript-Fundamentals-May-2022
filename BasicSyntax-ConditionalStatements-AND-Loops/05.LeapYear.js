@@ -5,12 +5,10 @@ function leapYear(year) {
         console.log("no");
     }
 }
-leapYear(1900)
-
+leapYear(1900);
+//Short solve
 function leapYear(year) {
-    let result =
-        ((year % 4 == 0 && year % 100 !== 0) || year % 400 === 0 ? "yes" : "no")
-    console.log(result)
-
+    let result = ((year % 4 == 0 && year % 100 !== 0) || year % 400 === 0 ? "yes" : "no")
+    console.log(result);
 }
-leapYear(1900)
+leapYear(1900);

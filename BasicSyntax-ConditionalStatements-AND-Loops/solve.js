@@ -15,11 +15,8 @@
 // console.log(name);
 
 // function solve(name, age){
-    
-
 //     console.log(name);
 //     console.log(age);
-
 // }
 // solve("Todor", "25")
 
@@ -80,14 +77,11 @@
     
 // }
 // monPrint(-1)
-
-switch (key) {
-    case value:
-        
-        break;
-
-    default:
-        break;
-}
+// switch (key) {
+//     case value:    
+//         break;
+//     default:
+//         break;
+// }
 
 

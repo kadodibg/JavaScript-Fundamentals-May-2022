@@ -7,7 +7,7 @@ function triangleOfNumbers(num) {
                 line += ` `;
             }
         }
-        console.log(line)
+        console.log(line);
     }
 }
 triangleOfNumbers(5)
