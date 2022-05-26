@@ -1,21 +1,46 @@
-// function mergeArrays(arr1, arr2) {
-//     let thirdArray = [];
-//     for (let i = 0; i < arr1.length; i++) {
-        
-//         if (i % 2 === 0) {
-//           thirdArray.push(Number(arr1[i]) + Number(arr2[i]));
-//         } else {
-//           thirdArray.push(`${arr1[i]}${arr2[i]}`);
-//         }
-//     }
-//     console.log(thirdArray.join(' - '));
-//     // output 22 - 1522 - 110 - 5636 - 46
-// }
-// mergeArrays(['5', '15', '23', '56', '35'],
-//     ['17', '22', '87', '36', '11']);
-
 let myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon']
-let removed = myFish.splice(3, 1, 'Shark')
- console.log(myFish);
+let myNewFish =["angel", "clown", "drum", "sturgeon"]
+let removed = myFish.splice(3, 1, 'Golden');
+let add = myNewFish.push('Shark');
+let cut = myNewFish.shift();
+
+console.log(myFish);
+console.log(myNewFish);
 // myFish is ["angel", "clown", "drum", "sturgeon"]
 // removed is ["mandarin"]
+// add is ["Shark"]
+// add at i[0] shift
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+
+//-------
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
