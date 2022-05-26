@@ -29,27 +29,45 @@
 
 // Otricatelnite stoinosti ne promeniat dulzhinata na array 
 
-let arr = [10, 20, 30];
+// let arr = [10, 20, 30];
+// for(let i = 0; i < arr.length; i++){
+//     console.log(arr[i]);
+// }
+
+// let separator = " <=> ";
+
+// console.log(arr.includes(20)); // true
+// console.log(arr.includes(20, 3)); // false 
+// console.log(arr.includes(0)); // false
+// console.log(arr.includes(10+10)); // true
+
+// console.log(arr.join(':')); // 10:20:30
+// console.log(arr.join(separator)); // 10<=>20<=>30
+// let words = ["one", "two"];
+// console.log(arr.join('--->'));
+// console.log(arr.toString());
+// console.log(words.join(' - ')); // one - two 
+// console.log('hello world'.includes('l'));
+
+// let capitals = ['Sofia', 'Washington', 'London'];
+// for(let i = 0; i< capitals.length; i++){
+// console.log(capitals[i]);
+// }
+
+let arr = [10, 20, 30, 40]
+
 for(let i = 0; i < arr.length; i++){
-    console.log(arr[i]);
+    let current = arr[i];
+    console.log(current);
 }
 
-let separator = " <=> ";
-
-console.log(arr.includes(20)); // true
-console.log(arr.includes(20, 3)); // false 
-console.log(arr.includes(0)); // false
-console.log(arr.includes(10+10)); // true
-
-console.log(arr.join(':')); // 10:20:30
-console.log(arr.join(separator)); // 10<=>20<=>30
-let words = ["one", "two"];
-console.log(arr.join('--->'));
-console.log(arr.toString());
-console.log(words.join(' - ')); // one - two 
-console.log('hello world'.includes('l'));
-
-let capitals = ['Sofia', 'Washington', 'London'];
-for(let i = 0; i< capitals.length; i++){
-console.log(capitals[i]);
+for (let current of arr){
+    console.log(current);
 }
+
+let numbers = [1, 2, 3, 4, 5,];
+let output = '';
+for(let number of numbers){
+    output += `${number}`
+}
+console.log(output);
