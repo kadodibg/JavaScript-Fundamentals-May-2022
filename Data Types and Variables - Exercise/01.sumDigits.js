@@ -6,4 +6,4 @@ function sumDigits(num) {
     // }
     console.log(sum);
 }
-sumDigits(245678);
+sumDigits(245678); 
