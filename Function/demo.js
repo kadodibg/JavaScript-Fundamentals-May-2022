@@ -22,3 +22,10 @@
 // formatGrade(5.49);
 // formatGrade(5.49999);
 // formatGrade(5.50);
+
+function solve(){
+    let name = 'Todor';
+    console.log(name.charCodeAt(0))
+    console.log(charAt())
+}
+solve()
