@@ -41,4 +41,4 @@ function printCertificate(grade, names){
 
 printCertificate(5.256, ['John', 'Smith']);
 printCertificate(4.30, ['Peter', 'Roberts']);
-printCertificate(2.30, ['Toshko', 'Stoyanov']);
+printCertificate(2.30, ['Petar', 'Stoyanov']);
