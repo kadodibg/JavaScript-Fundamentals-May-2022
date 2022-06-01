@@ -19,6 +19,12 @@
 //     printLabel();
 //     printContent();
 // }
+// Function declaration - Деклариране на функция
+// Function expression - 
+// recursive <-> iterative
+// Recursive - Функцията извиква себе си. Рекурсията, може да има разклонения. 
+// Iterative - Функцията се завърта вътре в себе си. По- добре е за процесора.
+
 // Една функция, може да извика себе си нарича се нарича рекурсия
 function countDown(x) {
     console.log(x);
