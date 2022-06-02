@@ -23,9 +23,21 @@
 // formatGrade(5.49999);
 // formatGrade(5.50);
 
-function solve(){
-    let name = 'Todor';
-    console.log(name.charCodeAt(0))
-    console.log(charAt())
-}
-solve()
+// function solve(){
+//     let name = 'Todor';
+//     console.log(name.charCodeAt(0))
+//     console.log(charAt())
+// }
+// solve()
+
+// let increment = function(x){
+//     return x + 1;
+// }
+
+let sum = (a, b) => a + b;
+console.log(sum(5, 11))
+
+
+
+let increment = x => x + 1;
+console.log(increment(5));
