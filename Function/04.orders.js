@@ -1,19 +1,22 @@
 function orders(prod, quantity){
+    let result = 0;
+
     switch(prod){
         case "coffee":
-            console.log(`${(quantity * 1.5).toFixed(2)}`);
+            result = quantity * 1.5;
             break;
         case "water": 
-        console.log(`${(quantity * 1.00).toFixed(2)}`);
+            result = quantity * 1.00;
             break;
         case "coke": 
-        console.log(`${(quantity * 1.40).toFixed(2)}`);
+            result = quantity * 1.40;
             break;
         case "snacks":
-            console.log(`${(quantity * 2.00).toFixed(2)}`);
+            result = quantity * 2.00;
             break;
             
     }
+    console.log(`${result.toFixed(2)}`)
 }
 orders("water", 5);
 orders("coffee", 3);
