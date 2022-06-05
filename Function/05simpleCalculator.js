@@ -18,7 +18,7 @@ function simpleCalculator(a, b, operator) {
             result = subtract(a, b)
             break;
     }
-    console.log(result)
+    console.log(result) 
 }
 simpleCalculator(5, 5, 'multiply');
 simpleCalculator(40, 8, 'divide');
