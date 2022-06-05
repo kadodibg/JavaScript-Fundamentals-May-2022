@@ -13,4 +13,4 @@ function sumEvenNumbers(arr) {
     //print result
     console.log(sum)
 }
-sumEvenNumbers(['1','2','3','4','5','6']);
+sumEvenNumbers(['1','2','3','4','5','6']); 
