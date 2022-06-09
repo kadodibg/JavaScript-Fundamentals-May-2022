@@ -4,13 +4,9 @@ function nonDecreasingSubset(arr) {
 
     for (let i = 0; i < arr.length; i++) {
         let currentNum = arr[i];
-        //console.log(arr[i])
         if (currentNum >= tempNum) {
             result.push(arr[i]);
             tempNum = currentNum;
-        }
-        if (currentNum > tempNum) {
-            tempNum < currentNum;
         }
     }
     console.log(result.join(" "));
