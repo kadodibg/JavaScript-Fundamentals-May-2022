@@ -1,7 +1,9 @@
 function tseamAccount(input) {
     let games = input[0].split(' ');
+   
     for (let i = 1; i < input.length; i++) {
         let currentEl = input[i].split(' ');
+        console.log(currentEl)
         let command = currentEl[0];
         let newGame = currentEl[1];
         if (command === 'Play') {
