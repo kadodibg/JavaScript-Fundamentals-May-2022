@@ -1,0 +1,25 @@
+{
+
+    "launch": {
+    
+    "configurations": [
+    
+    {
+    
+    "type": "node",
+    
+    "request": "launch",
+    
+    "name": "Launch Program",
+    
+    "program": "${file}"
+    
+    }
+    
+    ],
+    
+    "compounds": []
+    
+    }
+    
+    }
