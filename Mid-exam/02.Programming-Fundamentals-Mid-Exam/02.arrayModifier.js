@@ -1,8 +1,6 @@
 function arrayModifier(arr) {
     let array = arr.shift().split(' ');
-    let command = arr.shift().split(' ');
-    let array1 = array;
-    let r = arrToNumber(array1);    
+    let r = arrToNumber(array);    
     function arrToNumber(arr){
         let result = [];
         for(let element of arr){
@@ -10,6 +8,8 @@ function arrayModifier(arr) {
         }
         return result;
     }
+
+    let command = arr.shift().split(' ');
     while (command !== 'end') {
         if (command[0] == 'swap') {
         [r[command[1]], r[command[2]]] = [r[command[2]], r[command[1]]];
