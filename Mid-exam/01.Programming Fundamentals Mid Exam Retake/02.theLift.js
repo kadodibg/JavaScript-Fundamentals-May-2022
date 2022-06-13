@@ -4,7 +4,6 @@ function theLift(input){
     wagonSpaceCount = 0;
 
     for(let i = 0; i < wagons.length; i++){
-        
         let currWagon = Number(wagons[i]);
 
         if(currWagon < 4){
@@ -26,7 +25,8 @@ function theLift(input){
             }
         }
         
-    }
+     }
+
     console.log(peopleCount);
     console.log(wagons);
 
@@ -34,5 +34,5 @@ function theLift(input){
     // console.log("There isn't enough space! {people} people in a queue! {wagons separated by ' '}");
 
 }
-theLift(["15", "0 0 0 0 0"])
-//theLift(["20", "0 2 0"])
+theLift(["15", "0 0 0 0"])
+theLift(["20", "0 2 0"])
