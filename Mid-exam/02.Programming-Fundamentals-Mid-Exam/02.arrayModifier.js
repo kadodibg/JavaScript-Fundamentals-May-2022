@@ -1,6 +1,4 @@
 function arrayModifier(arr){
-    let index = 0;
-    index++
     let array = arr.shift().split(' ').map(Number);
     let command = arr.shift();
 
