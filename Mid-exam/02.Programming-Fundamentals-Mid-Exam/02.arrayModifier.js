@@ -1,6 +1,6 @@
 function arrayModifier(arr) {
-    let array = arr.shift().split(' ');
-    let r = arrToNumber(array);    
+    let r = arrToNumber(arr.shift().split(' '));    
+    
     function arrToNumber(arr){
         let result = [];
         for(let element of arr){
