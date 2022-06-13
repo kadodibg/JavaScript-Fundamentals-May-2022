@@ -2,21 +2,16 @@ function arrayModifier(arr) {
     let array = arr.shift().split(' ');
     let command = arr.shift().split(' ');
     while (command !== 'end') {
-        let el = command[1];
-        let el1 = command[2];
         if (command[0] == 'swap') {
-            [array[el], array[el1]] = [array[el1], array[el]];
-
+            [array[command[1]], array[command[2]]] = [array[command[2]], array[command[1]]];
         } else if (command[0] == 'multiply') {
-            array[el] *= array[el1];
+            array[command[1]] *= array[command[2]];
         } else if (command[0] == 'decrease') {
             for (let i = 0; i < array.length; i++) {
                 array[i] -= 1;
             }
         }
-        if (command == 'end') {
-            break;
-        }
+        if (command == 'end') { break; }
         command = arr.shift().split(' ');
     }
     console.log(array.join(', '))
