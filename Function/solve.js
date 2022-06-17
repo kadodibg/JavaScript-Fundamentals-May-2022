@@ -32,10 +32,18 @@
 // }
 // countDown(10)
 
-function sum(a, b){
-    return a + b;
+// function sum(a, b){
+//     return a + b;
 
+// }
+// let result = sum(3, 5)
+// console.log(result + 9)
+
+let multiply = num => num * 2;
+
+console.log(multiply(3))
+
+function multiply2 (num){
+    return num *2
 }
-let result = sum(3, 5)
-console.log(result + 9)
-
+console.log(multiply2(4));
