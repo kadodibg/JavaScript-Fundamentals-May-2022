@@ -56,6 +56,7 @@
 
 let numsAsString = ["5", "23", "45", "-2"];
 let nums = [5, 23, 45, -2];
+
 let r = mapToNumber(nums);
 console.log(r);
 
