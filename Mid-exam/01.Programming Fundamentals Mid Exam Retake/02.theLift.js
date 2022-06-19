@@ -1,38 +1,47 @@
-function theLift(input){
-    peopleCount = Number(input.shift());
-    wagons = input.shift().split(' ');
-    wagonSpaceCount = 0;
-
-    for(let i = 0; i < wagons.length; i++){
+function theLift(input) {
+    let ppl = Number(input.shift());
+    let wagons = input.shift().split(' ');
+    let wagonSpaceCount = 0;
+ 
+    for (let i = 0; i < wagons.length; i++) {
         let currWagon = Number(wagons[i]);
-
-        if(currWagon < 4){
-            if(peopleCount >= 4){
-                if(currWagon != 0){
-                    peopleCount -= (4 - currWagon);
+        if (currWagon < 4) {
+            if (ppl >= 4) {
+                if (currWagon != 0) {
+                    ppl -= (4 - currWagon);
+                    currWagon = 4;
                     wagons[i] = currWagon;
                     emptySpots = false;
-                }else{
-                    currWagon = 4
-                    peopleCount -= currWagon;
+                } else {
+                    currWagon = 4;
+                    ppl -= currWagon;
                     wagons[i] = currWagon;
                 }
-            }else{
-            currWagon += peopleCount;
-            peopleCount = 0;
-            wagons[i] = currWagon;
-            emptySpots = true;
+            } else {
+                currWagon += ppl;
+                ppl = 0;
+                wagons[i] = currWagon;
+                emptySpots = true;
             }
         }
-        
-     }
-
-    console.log(peopleCount);
-    console.log(wagons);
-
-    // console.log("The lift has empty spots! {wagons separated by ' '}");
-    // console.log("There isn't enough space! {people} people in a queue! {wagons separated by ' '}");
-
+    }
+    if (ppl != 0) {
+        console.log(`There isn't enough space! ${ppl} people in a queue!`);
+        console.log(wagons.join(' '));
+    } else {
+        for (let wagon of wagons) {
+            
+            if (wagon === 4) {
+                wagonSpaceCount++;
+            }
+        }
+        if (wagonSpaceCount != wagons.length) {
+            console.log("The lift has empty spots!");
+            console.log(`${wagons.join(' ')}`)
+        } else {
+            console.log(`${wagons.join(' ')}`)
+        }
+    }
 }
 theLift(["15", "0 0 0 0"])
 theLift(["20", "0 2 0"])
