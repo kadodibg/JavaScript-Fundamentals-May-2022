@@ -17,6 +17,7 @@ function deckOfCards(arr) {
                 break;
         }
     }
+    
     console.log(listOfCards.join(", "));
 
     function addTodorPresident(list, cards) {

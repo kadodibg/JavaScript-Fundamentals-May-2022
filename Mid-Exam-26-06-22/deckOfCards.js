@@ -1,127 +1,121 @@
-function deckOfCards(arr) {
-    let listOfCards = arr.shift().split(", ");
-    let commands = arr.shift();
+// function deckOfCards(arr) {
+//     let listOfCards = arr.shift().split(", ");
+//     let commands = arr.shift();
     
-    for (let commands of arr) {
-        let [command, ...cards] = commands.split(", ");
-        switch (command) {
-        case "Add":
-            addTodorPresident(listOfCards, cards);
-            break;
-        case "Remove":
-            removeTodorPresident(listOfCards, cards)
-            break;
-        case "Remove At":
-            removeAtTodorPresident(listOfCards, cards)
-            break;
-        case "Insert":
-        insert(listOfCards, cards)
-            break;
-        }
-    }
-    console.log(listOfCards.join(", "));
+//     for (let commands of arr) {
+//         let [command, ...cards] = commands.split(", ");
+//         switch (command) {
+//         case "Add":
+//             addTodorPresident(listOfCards, cards);
+//             break;
+//         case "Remove":
+//             removeTodorPresident(listOfCards, cards)
+//             break;
+//         case "Remove At":
+//             removeAtTodorPresident(listOfCards, cards)
+//             break;
+//         case "Insert":
+//         insert(listOfCards, cards)
+//             break;
+//         }
+//     }
+//     console.log(listOfCards.join(", "));
     
-    function addTodorPresident(list, cards){
-    if (listOfCards.includes(cards)) {
-        console.log("Card is already in the deck");
-    } else {
-        console.log("Card successfully added");
-        listOfCards.push(cards);
-        }
-    }
-    function removeTodorPresident(list, cards){
-        let cardName = cards[0];
-        if (listOfCards.includes(cardName)) {
-        let cardIndx = listOfCards.indexOf(cardName);
-        listOfCards.splice(cardIndx, 1);
-        console.log("Card successfully removed");
-        } else {
-        console.log("Card not found");
-        }
-    }
+//     function addTodorPresident(list, cards){
+//     if (listOfCards.includes(cards)) {
+//         console.log("Card is already in the deck");
+//     } else {
+//         console.log("Card successfully added");
+//         listOfCards.push(cards);
+//         }
+//     }
+//     function removeTodorPresident(list, cards){
+//         let cardName = cards[0];
+//         if (listOfCards.includes(cardName)) {
+//         let cardIndx = listOfCards.indexOf(cardName);
+//         listOfCards.splice(cardIndx, 1);
+//         console.log("Card successfully removed");
+//         } else {
+//         console.log("Card not found");
+//         }
+//     }
 
-    function removeAtTodorPresident(list, cards){
-        let indx = Number(cards[0]);
-        if (indx < 0 || indx > listOfCards.length) {
-            console.log("Index out of range");
-        } else {
-            listOfCards.splice(indx, 1);
-            console.log("Card successfully removed");
-        }
-    }
-    function insert(list, cards){
-        let listIndx = Number(cards[0]);
-        let nameOfCard = cards[1];
-        if (listIndx < 0 || listIndx > listOfCards.length) {
-          console.log("Index out of range");
-        } else if (listIndx >= 0 && listIndx <= listOfCards.length) {
-            if (listOfCards.includes(nameOfCard)) {
-            console.log("Card is already added");
-            }else {
-            listOfCards.splice(listIndx, 0, nameOfCard);
-            console.log("Card successfully added");
-            }
-        }
-    }
-    
-}
-deckOfCards([ "Ace of Diamonds, Queen of Hearts, King of Clubs", "3", "Add, King of Diamonds", "Insert, 2, Jack of Spades", "Remove, Ace of Diamonds", ]);
-console.log('-------------------- Mnogo e iako taka -------------------------');
-deckOfCards(["Jack of Spades, Ace of Clubs, Jack of Clubs", "2", "Insert, -1, Queen of Spades","Remove At, 1"])
-
-
-// function deckOfCards(input) {
-//     let cards = input.shift().split(', ');
-//     let n = Number(input.shift());
- 
-//     for (let i = 0; i < n; i++) {
-//         let [command, card, index] = input.shift().split(', ');
- 
-//         if (command == 'Add') {
-//             if (cards.includes(card)) {
-//                 console.log('Card is already in the deck');
-//             } else {
-//                 cards.push(card);
-//                 console.log('Card successfully added');
-//             }
-//         } else if (command == 'Remove') {
-//             if (cards.includes(card)) {
-//                 let index = cards.indexOf(card);
-//                 cards.splice(index, 1);
-//                 console.log('Card successfully removed');
-//             } else {
-//                 console.log('Card not found');
-//             }
-//         } else if (command == 'Remove At') {
-//             card = Number(card)
-//             if (card < 0 || card > cards.length) {
-//                 console.log('Index out of range');
-//             } else {
-//                 cards.splice(card, 1)
-//                 console.log('Card successfully removed');
-//             }
-//         } else if (command == 'Insert') {
-//             card = Number(card);
-//             if (card < 0 || card > cards.length) {
-//                 console.log("Index out of range");
-//             } else if (cards.includes(index)) {
-//                 console.log('Card is already added');
-//             } else {
-//                 cards.splice(card, 0, index);
-//                 console.log('Card successfully added');
+//     function removeAtTodorPresident(list, cards){
+//         let indx = Number(cards[0]);
+//         if (indx < 0 || indx > listOfCards.length) {
+//             console.log("Index out of range");
+//         } else {
+//             listOfCards.splice(indx, 1);
+//             console.log("Card successfully removed");
+//         }
+//     }
+//     function insert(list, cards){
+//         let listIndx = Number(cards[0]);
+//         let nameOfCard = cards[1];
+//         if (listIndx < 0 || listIndx > listOfCards.length) {
+//           console.log("Index out of range");
+//         } else if (listIndx >= 0 && listIndx <= listOfCards.length) {
+//             if (listOfCards.includes(nameOfCard)) {
+//             console.log("Card is already added");
+//             }else {
+//             listOfCards.splice(listIndx, 0, nameOfCard);
+//             console.log("Card successfully added");
 //             }
 //         }
 //     }
-//     console.log(cards.join(', '));
+    
 // }
+// deckOfCards([ "Ace of Diamonds, Queen of Hearts, King of Clubs", "3", "Add, King of Diamonds", "Insert, 2, Jack of Spades", "Remove, Ace of Diamonds", ]);
+// console.log('-------------------- Mnogo e iako taka -------------------------');
+// deckOfCards(["Jack of Spades, Ace of Clubs, Jack of Clubs", "2", "Insert, -1, Queen of Spades","Remove At, 1"])
 
-// deckOfCards([
-//   "Ace of Diamonds, Queen of Hearts, King of Clubs",
-//   "3",
-//   "Add, King of Diamonds",
-//   "Insert, 2, Jack of Spades",
-//   "Remove, Ace of Diamonds",
-// ])
+
+function deckOfCards(input) {
+    let cards = input.shift().split(', ');
+    let n = Number(input.shift());
+ 
+    for (let i = 0; i < n; i++) {
+        let [command, card, index] = input.shift().split(', ');
+ 
+        if (command == 'Add') {
+            if (cards.includes(card)) {
+                console.log('Card is already in the deck');
+            } else {
+                cards.push(card);
+                console.log('Card successfully added');
+            }
+        } else if (command == 'Remove') {
+            if (cards.includes(card)) {
+                let index = cards.indexOf(card);
+                cards.splice(index, 1);
+                console.log('Card successfully removed');
+            } else {
+                console.log('Card not found');
+            }
+        } else if (command == 'Remove At') {
+            card = Number(card)
+            if (card < 0 || card > cards.length) {
+                console.log('Index out of range');
+            } else {
+                cards.splice(card, 1)
+                console.log('Card successfully removed');
+            }
+        } else if (command == 'Insert') {
+            card = Number(card);
+            if (card < 0 || card > cards.length) {
+                console.log("Index out of range");
+            } else if (cards.includes(index)) {
+                console.log('Card is already added');
+            } else {
+                cards.splice(card, 0, index);
+                console.log('Card successfully added');
+            }
+        }
+    }
+    console.log(cards.join(', '));
+}
+
+deckOfCards((["Ace of Diamonds, Queen of Hearts, King of Clubs", "3", "Add, Ace of Diamonds", "Insert, 2, Anna", "Remove, Ace of Diamonds"]))
 
 // function deckOfCards(array) {
 //     let cards = array.shift().split(', ');
