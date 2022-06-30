@@ -1,14 +1,20 @@
 function taxCalculator(array){
     let cars = array.shift().split('>>');
     let carType = 0;
+    let yearsOfUse = 0;
+    let totalTaxToPay = 0;
+    let agencyTax = 0;
     let familyTax = 50;
     let heavyDutyTax = 80;
     let sportTax = 100;
-    let totalTaxToPay = 0;
-    let agencyTax = 0;
 
     for(let el of cars){
-        let splited = el.split(' ');
+        let [splited, ...allKm] = el.split(' ');
+        console.log(allKm[0]);
+      //
+      //  carType = splited[0];
+       // yearsOfUse = splited[1];
+
         if(splited[0] === 'family'){
             familyCars(cars, splited);
         }else if (splited[0] === 'heavyDuty'){
@@ -22,16 +28,12 @@ function taxCalculator(array){
     console.log(`The National Revenue Agency will collect ${agencyTax.toFixed(2)} euros in taxes.`);
     
     function familyCars(list, splited){
-        carType = splited[0]
-        let yearsOfUse = splited[1]
         let allKm = Math.floor(splited[2] / 3000);
         totalTaxToPay = allKm * 12 + (familyTax - yearsOfUse * 5);
         console.log(`A ${carType} car will pay ${totalTaxToPay.toFixed(2)} euros in taxes.`);
         agencyTax += totalTaxToPay
     }
     function heavyDutyCars(list, splited){
-        carType = splited[0]
-        let yearsOfUse = splited[1]
         let allKm = Math.floor(splited[2] / 9000);
         totalTaxToPay = allKm * 14 + (heavyDutyTax - yearsOfUse * 8);
         console.log(`A ${carType} car will pay ${totalTaxToPay.toFixed(2)} euros in taxes.`);
@@ -39,8 +41,6 @@ function taxCalculator(array){
     }
 
     function sportCars(list, splited){
-        carType = splited[0]
-        let yearsOfUse = splited[1]
         let allKm = Math.floor(splited[2] / 2000);
         totalTaxToPay = allKm * 18 + (sportTax - yearsOfUse * 9);
         console.log(`A ${carType} car will pay ${totalTaxToPay.toFixed(2)} euros in taxes.`);
