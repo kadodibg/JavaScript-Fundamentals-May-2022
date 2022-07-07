@@ -5,10 +5,12 @@ function phoneBook(data){
       let [name, phoneNumber] = line.split(' ');
       phoneBooks.set(name, phoneNumber);
   }
-  console.log(phoneBooks);
-
-  for(let kvp of phoneBooks.keys()){
-    console.log(kvp, '->', phoneBooks.get(kvp));
+ // console.log(phoneBooks);
+  // for(let kvp of phoneBooks.keys()){
+  //   console.log(kvp, '->', phoneBooks.get(kvp));
+  // }
+  for(let [key, value] of phoneBooks){
+    console.log(key, '->', value);
   }
 }
 phoneBook(['Tim 0834212554',

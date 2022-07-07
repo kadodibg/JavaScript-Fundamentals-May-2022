@@ -1,20 +1,42 @@
-function solve(data){
-    let myMap = new Map();
+function storage(data){
+    let map = new Map();
 
-    myMap.set('name', 'Todor');
-    console.log(myMap.keys());
-    console.log(Array.from(myMap.keys()));
-    console.log(Array.from(myMap.values()));
+    for(let line of data){
+        let tokens = line.split(' ');
+        let product = tokens[0];
+        let quantity = Number(tokens[1]);
+        
+        if(!map.has(product)){
+            map.set(product, quantity)
+        }else{
+            let currQuantity = map.get(product);
+            let newsQuantity = currQuantity += quantity;
+            map.set(product, newsQuantity)
+        }
+    }
 
-
-
-    // console.log(myMap);
-    // console.log(myMap.get('name'));
-    // console.log(myMap.has('name'));
-    // myMap.set('age', 30)
-    // console.log(myMap.has('pesho'));
+    for(let kvp of map){
+        console.log(`${kvp[0]} -> ${kvp[1]}`);
+    }
+  
 }
-solve()
+storage(['tomatoes 10','coffee 5', 'olives 100', 'coffee 40'])
+
+// function solve(data){
+//     let myMap = new Map();
+
+//     myMap.set('name', 'Todor');
+//     console.log(myMap.keys());
+
+
+
+//     // console.log(myMap);
+//     // console.log(myMap.get('name'));
+//     // console.log(myMap.has('name'));
+//     // myMap.set('age', 30)
+//     // console.log(myMap.has('pesho'));
+// }
+// solve()
 
 
 
