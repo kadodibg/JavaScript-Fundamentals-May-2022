@@ -2,15 +2,16 @@ function storage(data){
     let map = new Map();
     
     for(let line of data ){
-        let tokens = line.split(' ');
-        let product = tokens[0];
-        let quantity = Number(tokens[1]);
+        let [product, quantity] = line.split(' ')
+        // let tokens = line.split(' ');
+        // let product = tokens[0];
+        // let quantity = Number(tokens[1]);
 
         if(!map.has(product)){
-            map.set(product, quantity)
+            map.set(product, Number(quantity))
         }else{
             currQuantity = map.get(product);
-            let newQuantity = currQuantity += quantity;
+            let newQuantity = currQuantity += Number(quantity);
             map.set(product, newQuantity);
         }
 
@@ -19,7 +20,6 @@ function storage(data){
         // console.log(quantity);
     }
     //console.log(map);
-
     // for(let kvp of map){
     //     console.log(kvp[0], '->', kvp[1]);
     // }
