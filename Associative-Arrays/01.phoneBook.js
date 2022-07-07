@@ -7,16 +7,19 @@ function phoneBook(data){
   }
   console.log(phoneBooks);
 
-  // for(let [name, phoneNumber] of Object.entries(phoneBooks)){
-  //   console.log(name, '->', phoneNumber);
-  //   //  console.log(key, '- >', phoneBooks[key] );
-  // }
+  for(let kvp of phoneBooks.keys()){
+    console.log(kvp, '->', phoneBooks.get(kvp));
+  }
 }
 phoneBook(['Tim 0834212554',
           'Peter 0877547887',
           'Bill 0896543112',
           'Tim 0876566344'])
-
+// result 
+// Map(3) {size: 3, Tim => 0876566344, Peter => 0877547887, Bill => 0896543112}
+// Tim -> 0876566344
+// Peter -> 0877547887
+// Bill -> 0896543112
 
 // function phoneBook(data){
 //     let phoneBooks = {};
