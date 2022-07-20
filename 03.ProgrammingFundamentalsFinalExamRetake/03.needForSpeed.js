@@ -2,11 +2,13 @@ function needForSpeed(input) {
     let num = Number(input.shift());
     let carList = {}
     let tankSize = 75;
+   
     for (let i = 0; i < num; i++) {
         let line = input.shift();
         let [car, mileage, fuel] = line.split('|');
         mileage = Number(mileage);
         fuel = Number(fuel);
+        
         carList[car] = { mileage, fuel }
     }
     line = input.shift();
