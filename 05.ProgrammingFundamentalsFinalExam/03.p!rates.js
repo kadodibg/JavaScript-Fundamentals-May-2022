@@ -1,107 +1,61 @@
-function pirates(input){
+function pirates(input) {
     let towns = {}
     let line = input.shift();
-    
-    while(line !== "Sail"){
+
+    while (line !== "Sail") {
         let [town, people, gold] = line.split('||')
         people = Number(people)
         gold = Number(gold)
-        
-        if(!towns.hasOwnProperty(town)){
-        towns[town] = {people, gold}
-        }else{
-        towns[town].people += people;
-        towns[town].gold += gold;
-        }
-        line = input.shift('');
-    }
 
-    while(line !== 'End'){
-        let [command, town, ...more] = line.split('=>');
-        switch (command){
-            case 'Plunder':
-                let people = Number(more[0]);
-                let gold = Number(more[1]);  
-                console.log(`${town} plundered! ${gold} gold stolen, ${people} citizens killed.`);
-                towns[town].people -= people
-                towns[town].gold -= gold 
-                if(towns[town].people <= 0 || towns[town].gold <= 0 ){
-                    console.log(`${town} has been wiped off the map!`);
-                    delete towns[town];
-                }
-            break;
-            case 'Prosper': 
-                let golds = Number(more[0]);
-                
-                if(golds < 0){
-                    console.log(`Gold added cannot be a negative number!`);
-                }else{
-                    towns[town].gold += golds;
-                    console.log(`${golds} gold added to the city treasury. ${town} now has ${towns[town].gold} gold.`);
-                }
-            break;
-            function pirates(input){
-                let towns = {}
-                let line = input.shift();
-                
-                while(line !== "Sail"){
-                    let [town, people, gold] = line.split('||')
-                    people = Number(people)
-                    gold = Number(gold)
-                    
-                    if(!towns.hasOwnProperty(town)){
-                    towns[town] = {people, gold}
-                    }else{
-                    towns[town].people += people;
-                    towns[town].gold += gold;
-                    }
-                    line = input.shift();
-                }
-            
-                while(line !== 'End'){
-                    let [command, town, ...more] = line.split('=>');
-                    switch (command){
-                        case 'Plunder':
-                            let people = Number(more[0]);
-                            let gold = Number(more[1]);  
-                            console.log(`${town} plundered! ${gold} gold stolen, ${people} citizens killed.`);
-                            towns[town].people -= people
-                            towns[town].gold -= gold
-                            if(towns[town].people <= 0 || towns[town].gold <= 0 ){
-                                console.log(`${town} has been wiped off the map!`);
-                                delete towns[town];
-                            }
-                        break;
-                        case 'Prosper': 
-                            let golds = Number(more[0]);
-                            
-                            if(golds > 0){
-                                towns[town].gold += golds;
-                                console.log(`${golds} gold added to the city treasury. ${town} now has ${towns[town].gold} gold.`);
-                                
-                            }else{
-                                console.log(`Gold added cannot be a negative number!`);
-                            }
-                        break;
-                        default:
-                        break;
-                    }
-                    line = input.shift();
-                }
-                let size = Object.keys(towns).length; 
-                console.log(`Ahoy, Captain! There are ${size} wealthy settlements to go to:`)
-                for(let [key, value] of Object.entries(towns)){   
-                    console.log(`${key} -> Population: ${value.people} citizens, Gold: ${value.gold} kg`);
-                }
-                //console.table(towns);
-            }
+        if (!towns.hasOwnProperty(town)) {
+            towns[town] = { people, gold }
+        } else {
+            towns[town].people += people;
+            towns[town].gold += gold;
         }
         line = input.shift();
     }
-    let size = Object.keys(towns).length; 
-    console.log(`Ahoy, Captain! There are ${size} wealthy settlements to go to:`)
-    for(let [key, value] of Object.entries(towns)){   
-        console.log(`${key} -> Population: ${value.people} citizens, Gold: ${value.gold} kg`);
+
+    while (line !== 'End') {
+        let [command, town, ...more] = line.split('=>');
+        switch (command) {
+            case 'Plunder':
+                let people = Number(more[0]);
+                let gold = Number(more[1]);
+                console.log(`${town} plundered! ${gold} gold stolen, ${people} citizens killed.`);
+                towns[town].people -= people
+                towns[town].gold -= gold
+                if (towns[town].people <= 0 || towns[town].gold <= 0) {
+                    console.log(`${town} has been wiped off the map!`);
+                    delete towns[town];
+                }
+                break;
+            case 'Prosper':
+                let golds = Number(more[0]);
+
+                if (golds >= 0) {
+                    towns[town].gold += golds;
+                    console.log(`${golds} gold added to the city treasury. ${town} now has ${towns[town].gold} gold.`);
+
+                } else {
+                    console.log(`Gold added cannot be a negative number!`);
+                }
+                break;
+            default:
+                break;
+        }
+        line = input.shift();
+    }
+    
+    let size = Object.keys(towns).length;
+    
+    if (size > 0) {
+        console.log(`Ahoy, Captain! There are ${size} wealthy settlements to go to:`)
+        for (let [key, value] of Object.entries(towns)) {
+            console.log(`${key} -> Population: ${value.people} citizens, Gold: ${value.gold} kg`);
+        }
+    } else {
+        console.log(`Ahoy, Captain! All targets have been plundered and destroyed!`)
     }
     //console.table(towns);
 }
