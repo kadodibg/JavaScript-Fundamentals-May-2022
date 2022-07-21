@@ -23,6 +23,7 @@ function needForSpeed(input) {
                     let [key, value] = Object.values(carList[car]);
                     key = Number(key);
                     value = Number(value)
+                   // console.table(key, value);
                     if (nededFuel <= value) {
                         carList[car].fuel = value - nededFuel;
                         carList[car].mileage = key + distance;
