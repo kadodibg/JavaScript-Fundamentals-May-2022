@@ -1,5 +1,5 @@
 function adAstra(array) {
-    const regex = /([|#])(?<item>[A-Za-z\s]+)\1(?<expirationDate>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d{1,5})\1/g;
+    const regex = /([#|])(?<item>[A-Z][a-z]+|[A-Z]+[a-z]+[a-z]+ [A-z]+[a-z]+)\1(?<data>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d{1,5})\1/g;
     let matches = []
     let totalNut = 0;
     let nutForDay = 2000;
@@ -9,6 +9,7 @@ function adAstra(array) {
         let item = match[2];
         let data = match[3];
         let calories = match[4]
+        //console.log(match);
         calories = Number(calories);
         matches.push({ item, data, calories })
         totalNut += calories
