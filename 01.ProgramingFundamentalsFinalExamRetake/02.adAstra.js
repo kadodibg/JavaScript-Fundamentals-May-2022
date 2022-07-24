@@ -24,3 +24,10 @@ function adAstra(array) {
 adAstra(['$$#@@%^&#Fish#24/12/20#8500#|#Incorrect#19.03.20#450|$5*(@!#Ice Cream#03/10/21#9000#^#@aswe|Milk|05/09/20|2000|'])
 console.log('---------------------------------------');
 adAstra(['Hello|#Invalid food#19/03/20#450|$5*(@'])
+
+// You have food to last you for: 9 days!
+// Item: Fish, Best before: 24/12/20, Nutrition: 8500
+// Item: Ice Cream, Best before: 03/10/21, Nutrition: 9000
+// Item: Milk, Best before: 05/09/20, Nutrition: 2000
+// ---------------------------------------
+// You have food to last you for: 0 days!
